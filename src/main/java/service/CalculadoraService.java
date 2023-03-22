@@ -1,6 +1,8 @@
 package service;
 
+
 public class CalculadoraService {
+
     public int somar(int a, int b) {
         return a+b;
     }
@@ -9,11 +11,11 @@ public class CalculadoraService {
         return a-b;
     }
 
-    public int dividir(int a, int b) {
+    public double dividir(double a, double b) {
         return a/b;
     }
 
-    public int multiplicar(int a, int b) {
+    public double multiplicar(double a, double b) {
         return a*b;
     }
 }

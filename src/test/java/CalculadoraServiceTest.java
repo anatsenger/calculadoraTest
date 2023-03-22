@@ -1,19 +1,17 @@
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import service.CalculadoraService;
-import service.QuadradoService;
-import service.TrianguloService;
+
 
 
 public class CalculadoraServiceTest {
     CalculadoraService calculadoraService;
-    TrianguloService trianguloService;
-    QuadradoService quadradoService;
     int a;
     int b;
-
-    @Before
+    @BeforeEach
     public void BeforeCalcularoraService(){
         calculadoraService = new CalculadoraService();
         a = 2;
@@ -23,12 +21,11 @@ public class CalculadoraServiceTest {
     @Test
     public void CalculaSomaCorretamente(){
         //given:
-            //before
         //When:
         int somaEsperada = calculadoraService.somar(a, b);
 
         //Then:
-        Assert.assertEquals(4, somaEsperada);
+        Assertions.assertEquals(4, somaEsperada);
 
     }
 
@@ -39,7 +36,7 @@ public class CalculadoraServiceTest {
         //When:
         int subtrairEsperado = calculadoraService.subtrair(a, b);
         //Then:
-        Assert.assertTrue(subtrairEsperado == 0);
+        Assertions.assertEquals(0, subtrairEsperado);
     }
 
     @Test
@@ -47,9 +44,9 @@ public class CalculadoraServiceTest {
         //given:
         //before
         //When:
-        int divisaoEsperada = calculadoraService.dividir(a, b);
+        double divisaoEsperada = calculadoraService.dividir(a, b);
         //Then:
-        Assert.assertFalse(divisaoEsperada != 1);
+        Assertions.assertFalse(divisaoEsperada != 1);
     }
 
     @Test
@@ -57,9 +54,9 @@ public class CalculadoraServiceTest {
         //given:
         //before
         //When:
-        int multiplicacaoEsperada = calculadoraService.multiplicar(a, b);
+        double multiplicacaoEsperada = calculadoraService.multiplicar(a, b);
         //Then:
-        Assert.assertTrue(multiplicacaoEsperada == 4);
+        Assertions.assertTrue(multiplicacaoEsperada == 4);
     }
 
 
