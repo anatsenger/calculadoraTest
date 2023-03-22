@@ -1,8 +1,8 @@
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
-
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
+
 import service.CalculadoraService;
 
 
@@ -11,7 +11,7 @@ public class CalculadoraServiceTest {
     CalculadoraService calculadoraService;
     int a;
     int b;
-    @BeforeEach
+    @Before
     public void BeforeCalcularoraService(){
         calculadoraService = new CalculadoraService();
         a = 2;
