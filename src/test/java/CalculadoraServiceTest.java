@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 import service.CalculadoraService;
 
@@ -25,7 +24,7 @@ public class CalculadoraServiceTest {
         int somaEsperada = calculadoraService.somar(a, b);
 
         //Then:
-        Assertions.assertEquals(4, somaEsperada);
+        Assert.assertEquals(4, somaEsperada);
 
     }
 
@@ -36,7 +35,7 @@ public class CalculadoraServiceTest {
         //When:
         int subtrairEsperado = calculadoraService.subtrair(a, b);
         //Then:
-        Assertions.assertEquals(0, subtrairEsperado);
+        Assert.assertEquals(0, subtrairEsperado);
     }
 
     @Test
@@ -46,7 +45,7 @@ public class CalculadoraServiceTest {
         //When:
         double divisaoEsperada = calculadoraService.dividir(a, b);
         //Then:
-        Assertions.assertFalse(divisaoEsperada != 1);
+        Assert.assertFalse(divisaoEsperada != 1);
     }
 
     @Test
@@ -56,7 +55,7 @@ public class CalculadoraServiceTest {
         //When:
         double multiplicacaoEsperada = calculadoraService.multiplicar(a, b);
         //Then:
-        Assertions.assertTrue(multiplicacaoEsperada == 4);
+        Assert.assertTrue(multiplicacaoEsperada == 4);
     }
 
 
