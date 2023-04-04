@@ -29,7 +29,7 @@ public class CalculadoraServiceTest {
     }
 
     @Test
-    public void CalculaSubtrairCorretamente(){
+    public void CalculaSubtrairCorretamente() throws Exception {
         //given:
         //before
         //When:
@@ -57,6 +57,20 @@ public class CalculadoraServiceTest {
         //Then:
         Assert.assertTrue(multiplicacaoEsperada == 4);
     }
+
+    @Test
+    public void deveLancarExcecaoCasoValorDaSubSejaNeg() throws Exception {
+        //GIVEN
+
+        //WHEN
+        Integer c = 5;
+        Integer d = 10;
+
+        //THEN
+        Assert.assertThrows(Exception.class, ()-> calculadoraService.subtrair(c,d));
+    }
+
+
 
 
 

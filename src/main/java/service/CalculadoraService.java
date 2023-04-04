@@ -7,8 +7,11 @@ public class CalculadoraService {
         return a+b;
     }
 
-    public int subtrair(int a, int b) {
-        return a-b;
+    public Integer subtrair(Integer a, Integer b) throws Exception {
+        if (b > a){
+            throw new Exception("Resultado não pode ser negativo.");
+        }
+        return a - b;
     }
 
     public double dividir(double a, double b) {
