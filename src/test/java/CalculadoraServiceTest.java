@@ -1,8 +1,9 @@
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import service.CalculadoraService;
+
+
 
 
 
@@ -10,7 +11,7 @@ public class CalculadoraServiceTest {
     CalculadoraService calculadoraService;
     int a;
     int b;
-    @Before
+    @BeforeEach
     public void BeforeCalcularoraService(){
         calculadoraService = new CalculadoraService();
         a = 2;
@@ -24,7 +25,7 @@ public class CalculadoraServiceTest {
         int somaEsperada = calculadoraService.somar(a, b);
 
         //Then:
-        Assert.assertEquals(4, somaEsperada);
+        assertEquals(4, somaEsperada);
 
     }
 
@@ -35,7 +36,7 @@ public class CalculadoraServiceTest {
         //When:
         int subtrairEsperado = calculadoraService.subtrair(a, b);
         //Then:
-        Assert.assertEquals(0, subtrairEsperado);
+        assertEquals(0, subtrairEsperado);
     }
 
     @Test
@@ -45,7 +46,7 @@ public class CalculadoraServiceTest {
         //When:
         double divisaoEsperada = calculadoraService.dividir(a, b);
         //Then:
-        Assert.assertFalse(divisaoEsperada != 1);
+        assertFalse(divisaoEsperada != 1);
     }
 
     @Test
@@ -55,7 +56,7 @@ public class CalculadoraServiceTest {
         //When:
         double multiplicacaoEsperada = calculadoraService.multiplicar(a, b);
         //Then:
-        Assert.assertTrue(multiplicacaoEsperada == 4);
+        assertTrue(multiplicacaoEsperada == 4);
     }
 
     @Test
@@ -67,7 +68,7 @@ public class CalculadoraServiceTest {
         Integer d = 10;
 
         //THEN
-        Assert.assertThrows(Exception.class, ()-> calculadoraService.subtrair(c,d));
+        assertThrows(Exception.class, ()-> calculadoraService.subtrair(c,d));
     }
 
 
